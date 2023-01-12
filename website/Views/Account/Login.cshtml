@@ -1,0 +1,34 @@
+﻿@model website.Models.Account.LoginModel
+
+
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <h1>Sign In</h1>
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <h4 style="color:red">@TempData["errorPassword"]</h4>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-success" />
+            </div>
+          @*  <div class="form-group">
+                <a href="~/Account/Registration">Register</a>
+            </div>*@
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
