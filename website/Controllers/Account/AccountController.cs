@@ -33,19 +33,17 @@ namespace website.Controllers.Account
                 var user = await _context.Users.Where(x => x.Email == model.Email && x.Password == model.Password).FirstOrDefaultAsync();
                 if (user != null)
                 {
-                    Console.WriteLine("user is logggedIn");
-                    return RedirectToAction(controllerName:"Account",actionName:"Index");
+                    return RedirectToAction("Index","Home");
                 }
                 else
                 {
-                    Console.WriteLine("else");
                     TempData["errorPassword"] = "Invaild Password";
                     return View();
                 }
             }
             else
             {
-                TempData["errorUserEmail"] = "Email not found";
+                TempData["errorMessage"] = "Email not found";
                 return View();
             }
         }

@@ -15,9 +15,7 @@ namespace website.Models.Account
             RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Invalid Email")]
         public string? Email { get; set; }
 
-        [Required(ErrorMessage = "please enter password"),
-            RegularExpression(@"(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$",
-            ErrorMessage = "Minimum 8 character with uparcase,lowercase alphabets,numbers and special symbols")]
+        [Required(ErrorMessage = "please enter password")]
         public string? Password { get; set; }
 
         [Required(ErrorMessage = "Please Enter Your Address")]
