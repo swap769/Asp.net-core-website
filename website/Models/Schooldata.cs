@@ -2,19 +2,24 @@
 {
     public class Schooldata
     {
-        public class Teacher
-        {
-            public int TeacherId { get; set; }
-            public string Code { get; set; }
-            public string Name { get; set; }
-        }
-
         public class Student
         {
-            public int StudentId { get; set; }
-            public string Code { get; set; }
-            public string Name { get; set; }
-            public string EnrollmentNo { get; set; }
+            public int Id { get; set; }
+            public string? Name { get; set; }
+            public string? Stream { get; set; }
+        }
+
+        public class StudentInfo
+        {
+            public int Id { get; set; }
+            public int StdId { get; set; }
+            public string? FatherName { get; set; }
+            public string? Address { get; set; }
+        }
+
+        public class StudentViewModel {
+         public Student? studentVm { get; set; }
+         public StudentInfo? studentInfoVm { get; set; }
         }
 
     }

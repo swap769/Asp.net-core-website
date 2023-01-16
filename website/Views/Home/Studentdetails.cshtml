@@ -1,0 +1,26 @@
+﻿@model IEnumerable<website.Models.Schooldata.StudentViewModel>
+
+<h2>Student Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Stream</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@item.studentVm.Name</td>
+            <td>@item.studentInfoVm.FatherName</td>
+            <th>@item.studentVm.Stream</th>
+            <th>@item.studentInfoVm.Address</th>
+        </tr>
+}
+    </tbody>
+</table>
+
+

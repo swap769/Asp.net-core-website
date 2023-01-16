@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Dynamic;
 using website.Models;
+using static website.Models.Schooldata;
 
 namespace website.Controllers
 {
@@ -14,20 +16,44 @@ namespace website.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
-            return View();
+            return View();  
         }
-        
-        public IActionResult Teacher()
+
+
+        List<Student> students= new List<Student>();
+        List<StudentInfo> studentInfo = new List<StudentInfo>();
+
+     
+        public IActionResult Studentdetails()
         {
-           
-            return View();
+            
+            var studentViewModel = from s in students
+                                   join st in studentInfo on s.Id equals st.StdId into st2
+                                   from st in st2.DefaultIfEmpty()
+                                   select new StudentViewModel { studentVm = s, studentInfoVm = st };
+            insertDummyData();
+
+            return View(studentViewModel);
+            
         }
-        public IActionResult Student()
+        public void insertDummyData()
         {
-            return View();
+            
+            students.Add(new Student { Id = 1, Name = "Max", Stream = "Computer Science" });
+            students.Add(new Student { Id = 2, Name = "Tony", Stream = "Life Sciences" });
+            students.Add(new Student { Id = 3, Name = "Jhon", Stream = "Robotics" });
+            students.Add(new Student { Id = 4, Name = "Jack", Stream = "Computer Science" });
+            students.Add(new Student { Id = 5, Name = "Dominic", Stream = "Avaiation" });
+
+
+            studentInfo.Add(new StudentInfo { Id = 100, StdId = 1, FatherName = "Mahesh", Address = "Noida" });
+            studentInfo.Add(new StudentInfo { Id = 101, StdId = 2, FatherName = "Ramesh", Address = "Noida" });
+            studentInfo.Add(new StudentInfo { Id = 102, StdId = 3, FatherName = "Suresh", Address = "Noida" });
+            studentInfo.Add(new StudentInfo { Id = 103, StdId = 4, FatherName = "Ganesh", Address = "Noida" });
+            studentInfo.Add(new StudentInfo { Id = 104, StdId = 5, FatherName = "Hitesh", Address = "Noida" });
+
         }
 
         public IActionResult Privacy()
