@@ -1,6 +1,8 @@
-﻿@model IEnumerable<website.Models.Schooldata.StudentViewModel>
+﻿@*@model IEnumerable<website.Models.Schooldata.StudentViewModel>*@
 
-<h2>Student Details</h2>
+@*@model IEnumerable<website.Models.StudentModel>*@
+
+@*<h2>Student Details</h2>
 
 <table class="table">
     <thead>
@@ -21,6 +23,29 @@
         </tr>
 }
     </tbody>
-</table>
+</table>*@
+
+<h2>Student with course</h2>
+
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Students.stdId</td>
+                <td>@item.Students.Name</td>
+                <td>@item.Courses.CourseName</td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+
 
 
