@@ -1,9 +1,8 @@
 ﻿namespace website.Models
 {
-    public class Courses
+    public class Course
     {
-        public int Id { get; set; }
-        public string? CourseName { get; set; }
-
+        public int CourseId { get; set; }
+        public string? Name { get; set; }
     }
 }
