@@ -23,8 +23,11 @@ namespace website.Controllers
             return View();  
         }
 
-        public IActionResult Employee()
+        public IActionResult EmployeeCourse()
         {
+
+            var mymodel = new EmployeeCourse();
+
             return View();   
         }
 
