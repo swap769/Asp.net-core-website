@@ -23,13 +23,13 @@ namespace website.Controllers
             return View();  
         }
 
-        //public IActionResult EmployeeCourse()
-        //{
+        public IActionResult EmployeeCourse()
+        {
 
-        //    var mymodel = new EmployeeCourse();
+            var mymodel = new EmployeeCourse();
 
-        //    return View();   
-        //}
+            return View();
+        }
 
         List<Student> students = new List<Student>();
         List<StudentInfo> studentInfo = new List<StudentInfo>();
