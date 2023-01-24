@@ -6,6 +6,8 @@ namespace website.Models
     {
         [Key]
         public int CourseId { get; set; }
+
+        [Required]
         public string? CourseName { get; set; }
     }
 }
