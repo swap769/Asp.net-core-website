@@ -19,7 +19,6 @@ namespace website.Controllers
             _context = context;
         }
 
-        // GET: Courses
         public async Task<IActionResult> Index()
         {
               return _context.Courses != null ? 
@@ -27,7 +26,6 @@ namespace website.Controllers
                           Problem("Entity set 'ApplicationDbContext.Courses'  is null.");
         }
 
-        // GET: Courses/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Courses == null)
@@ -51,9 +49,6 @@ namespace website.Controllers
             return View();
         }
 
-        // POST: Courses/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CourseId,CourseName")] Course course)
@@ -67,7 +62,6 @@ namespace website.Controllers
             return View(course);
         }
 
-        // GET: Courses/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Courses == null)
@@ -83,9 +77,6 @@ namespace website.Controllers
             return View(course);
         }
 
-        // POST: Courses/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("CourseId,CourseName")] Course course)
@@ -118,7 +109,6 @@ namespace website.Controllers
             return View(course);
         }
 
-        // GET: Courses/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Courses == null)
@@ -136,7 +126,6 @@ namespace website.Controllers
             return View(course);
         }
 
-        // POST: Courses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
