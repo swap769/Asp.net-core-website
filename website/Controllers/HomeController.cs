@@ -48,10 +48,10 @@ namespace website.Controllers
             students.Add(new Student { Id = 5, Name = "Sonu", Stream = "Avaiation" });
 
             studentInfo.Add(new StudentInfo { Id = 100, StdId = 1, FatherName = "Mahesh", Address = "Noida" });
-            studentInfo.Add(new StudentInfo { Id = 101, StdId = 2, FatherName = "Ramesh", Address = "Noida" });
-            studentInfo.Add(new StudentInfo { Id = 102, StdId = 3, FatherName = "Suresh", Address = "Noida" });
-            studentInfo.Add(new StudentInfo { Id = 103, StdId = 4, FatherName = "Ganesh", Address = "Noida" });
-            studentInfo.Add(new StudentInfo { Id = 104, StdId = 5, FatherName = "Hitesh", Address = "Noida" });
+            studentInfo.Add(new StudentInfo { Id = 101, StdId = 2, FatherName = "Ramesh", Address = "Greater Noida" });
+            studentInfo.Add(new StudentInfo { Id = 102, StdId = 3, FatherName = "Suresh", Address = "Merrut" });
+            studentInfo.Add(new StudentInfo { Id = 103, StdId = 4, FatherName = "Ganesh", Address = "Delhi" });
+            studentInfo.Add(new StudentInfo { Id = 104, StdId = 5, FatherName = "Hitesh", Address = "Haryana" });
 
         }
 
